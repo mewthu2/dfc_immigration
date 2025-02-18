@@ -1,6 +1,6 @@
 # Dfc Immigration
 
-Este é um projeto de uma aplicação web para gerenciamento de jogos em uma liga de futebol Society Amador.
+DFC Immigration é processo de imigração acessível, humano e seguro
 
 ## Ambiente de desenvolvimento
 
