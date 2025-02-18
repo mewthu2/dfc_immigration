@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  timeout: 5000
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("DATABASE_HOST", 'localhost') %>
+  username: <%= ENV.fetch("DATABASE_USER", 'jesher') %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD", 'jesher') %>
+
+development:
+  <<: *default
+  database: dfc_immigration_development
+
+test:
+  <<: *default
+  database: dfc_immigration_test
+
+production:
+  <<: *default
+  database: dfc_immigration_production

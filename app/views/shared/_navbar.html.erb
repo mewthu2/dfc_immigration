@@ -1,0 +1,51 @@
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-start align-items-center">
+      <%= link_to 'DFC Immigration', root_path, class: "navbar-brand me-3 ms-1" %>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+     <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="<%= root_path %>">
+            <i class="bi bi-person-fill"></i> Olá <%= current_user.email %>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<%= root_path %>" class="nav-link text-dark">
+            <i class="bi bi-house-fill"></i> Início
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark">
+            <i class="bi bi-people-fill"></i> Questionario
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark">
+            <i class="bi bi-calendar2-check-fill"></i> Questões
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark">
+            <i class="bi bi-journal-bookmark-fill"></i> Pendentes
+          </a>
+        </li>
+        <li class="nav-item">
+          <%= link_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: 'nav-link' do %>
+            <i class="bi bi-box-arrow-right"></i> Sair
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
