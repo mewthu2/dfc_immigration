@@ -37,11 +37,11 @@ class Question < ApplicationRecord
   end
 
   add_scope :by_enounce do |enounce|
-    where(enounce: [enounce]) if enounce.present?
+    where(enounce: [ enounce ]) if enounce.present?
   end
 
   add_scope :by_kind do |kind|
-    where(kind: [kind]) if kind.present?
+    where(kind: [ kind ]) if kind.present?
   end
 
   add_scope :by_created_at do |start_date, end_date|
